@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Currency converter</title>
+    <link href="media/icon.png" rel="shortcut icon" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" media="screen" href="converterMoney.css">
+</head>
+<body>
+    <div id="mainConteiner">
+    <div id="blkSelectValute">
+        <div id="blkWithValuteCountry">
+        <div class="justText">from</div>
+        <select id="listWithCountry" onchange="converterMoney()">
+            <option>US</option>
+            <option>EU</option>
+            <option>PL</option>
+            <option>RU</option>
+        </select>    
+        </div>
+
+        <button class="swapValute" value="to_ua"><img src="media/swap.png"></button>
+
+        <div id="blkInValuteCountry">
+        <div class="justText">to</div>
+            <select id="listInCountry" onchange="converterMoney()">
+                <option>UA</option>
+                <option>UA2s</option>
+            </select>
+        </div>
+    </div>
+
+    <div id="inOutPut">
+    <input type='number' id="userValute" placeholder="AMOUNT" oninput="converterMoney()">
+    <div id="outValute"></div>
+    </div>
+
+
+    </div>
+</body>
+<script src="converterMoney.js"></script>
+</html>
