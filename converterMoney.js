@@ -67,17 +67,17 @@ function converterVal_To_Ua() {
     let convertValute;
 
     switch (select1){
-        case 'US': convertValute = userValute * rateArray[0] +" ₴"; break;
-        case 'EU': convertValute = userValute * rateArray[1] +" ₴"; break;
-        case 'PL': convertValute = userValute * rateArray[2] +" ₴"; break;
-        case 'RU': convertValute = userValute * rateArray[3] +" ₴"; break;
+        case 'US': convertValute = userValute * rateArray[0].toFixed(2) +" ₴"; break;
+        case 'EU': convertValute = userValute * rateArray[1].toFixed(2) +" ₴"; break;
+        case 'PL': convertValute = userValute * rateArray[2].toFixed(2) +" ₴"; break;
+        case 'RU': convertValute = userValute * rateArray[3].toFixed(2) +" ₴"; break;
     }
-    
-    outValute.innerHTML = convertValute;
+
+    outValute.innerHTML = convertValute ;
 }
 
 function converterUa_To_Val() {
-    let select1 = document.getElementById('listWithCountry').value;
+    //let select1 = document.getElementById('listWithCountry').value;
     let select2 = document.getElementById('listInCountry').value;
     let userValute = document.getElementById('userValute').value;
     let outValute = document.getElementById('outValute');
@@ -85,10 +85,10 @@ function converterUa_To_Val() {
     let convertValute;
 
     switch (select2){
-        case 'US': convertValute = userValute / rateArray[0] +" $"; break;
-        case 'EU': convertValute = userValute / rateArray[1] +" €"; break;
-        case 'PL': convertValute = userValute / rateArray[2] +" zł"; break;
-        case 'RU': convertValute = userValute / rateArray[3] +" ₽"; break;
+        case 'US': convertValute = userValute / rateArray[0].toFixed(2) +" $"; break;
+        case 'EU': convertValute = userValute / rateArray[1].toFixed(2) +" €"; break;
+        case 'PL': convertValute = userValute / rateArray[2].toFixed(2) +" zł"; break;
+        case 'RU': convertValute = userValute / rateArray[3].toFixed(2) +" ₽"; break;
     }
     
     outValute.innerHTML = convertValute;
