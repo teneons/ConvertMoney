@@ -1,19 +1,7 @@
-//swap valute
-let swapValute = document.querySelector('.swapValute');
+//get swap btn
+let swapValute = document.getElementById('swapValute');
 
-function button1 () {
-    if(swapValute.value == 'to_ua'){
-        swapValute.value = 'in_ua';
-    } else swapValute.value = 'to_ua';
-
-    alert(swapValute.value);
-
-
-}
-
-swapValute.addEventListener('click', button1);
-
-/*
+//swap valute and convert function
 function swapSelect(){
     let select1 = document.getElementById('listWithCountry');
     let select2 = document.getElementById('listInCountry');
@@ -24,10 +12,23 @@ function swapSelect(){
     select1.value = valueSelects2;
     select2.value = valueSelects1;
 
+    //change convert function
+    if(swapValute.value == 'val_to_ua'){
+        swapValute.value = 'ua_to_val';
+  
+        document.querySelector('select').setAttribute('onchange', 'converterUa_To_Val()');
+        document.getElementById('userValute').setAttribute('oninput', 'converterUa_To_Val()');
+
+    } else {
+        swapValute.value = 'val_to_ua'
+        document.querySelector('select').setAttribute('onchange', 'converterVal_To_Ua()');
+        document.getElementById('userValute').setAttribute('oninput', 'converterVal_To_Ua()');
+    };
+
 };
 
 swapValute.addEventListener('click', swapSelect);
-*/
+
 
 //get rate
 let rateArray = [];
@@ -58,7 +59,7 @@ function getCursNBU() {
 
 
 // CONVERT
-function converterMoney() {
+function converterVal_To_Ua() {
     let select1 = document.getElementById('listWithCountry').value;
     let userValute = document.getElementById('userValute').value;
     let outValute = document.getElementById('outValute');
@@ -70,6 +71,24 @@ function converterMoney() {
         case 'EU': convertValute = userValute * rateArray[1] +" ₴"; break;
         case 'PL': convertValute = userValute * rateArray[2] +" ₴"; break;
         case 'RU': convertValute = userValute * rateArray[3] +" ₴"; break;
+    }
+    
+    outValute.innerHTML = convertValute;
+}
+
+function converterUa_To_Val() {
+    let select1 = document.getElementById('listWithCountry').value;
+    let select2 = document.getElementById('listInCountry').value;
+    let userValute = document.getElementById('userValute').value;
+    let outValute = document.getElementById('outValute');
+
+    let convertValute;
+
+    switch (select2){
+        case 'US': convertValute = userValute / rateArray[0] +" $"; break;
+        case 'EU': convertValute = userValute / rateArray[1] +" €"; break;
+        case 'PL': convertValute = userValute / rateArray[2] +" zł"; break;
+        case 'RU': convertValute = userValute / rateArray[3] +" ₽"; break;
     }
     
     outValute.innerHTML = convertValute;
