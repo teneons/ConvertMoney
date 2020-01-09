@@ -52,8 +52,9 @@ function getCursNBU() {
     let cursEU = cursToObj.find(item => item.cc == 'EUR');
     let cursPL = cursToObj.find(item => item.cc == 'PLN');
     let cursRU = cursToObj.find(item => item.cc == 'RUB');
+    let cursCN = cursToObj.find(item => item.cc == 'CNY');
 
-    rateArray = [cursUS.rate, cursEU.rate, cursPL.rate, cursRU.rate];  
+    rateArray = [cursUS.rate, cursEU.rate, cursPL.rate, cursRU.rate, cursCN.rate];
     }
 }
 
@@ -67,10 +68,11 @@ function converterVal_To_Ua() {
     let convertValute;
 
     switch (select1){
-        case 'US': convertValute = userValute * rateArray[0].toFixed(2) +" ₴"; break;
-        case 'EU': convertValute = userValute * rateArray[1].toFixed(2) +" ₴"; break;
-        case 'PL': convertValute = userValute * rateArray[2].toFixed(2) +" ₴"; break;
-        case 'RU': convertValute = userValute * rateArray[3].toFixed(2) +" ₴"; break;
+        case 'US': convertValute = userValute * rateArray[0].toFixed(2) + " ₴"; break;
+        case 'EU': convertValute = userValute * rateArray[1].toFixed(2) + " ₴"; break;
+        case 'PL': convertValute = userValute * rateArray[2].toFixed(2) + " ₴"; break;
+        case 'RU': convertValute = userValute * rateArray[3].toFixed(2) + " ₴"; break;
+        case 'CN': convertValute = userValute * rateArray[4].toFixed(2) + " ₴"; break;
     }
 
     outValute.innerHTML = convertValute ;
@@ -89,6 +91,7 @@ function converterUa_To_Val() {
         case 'EU': convertValute = userValute / rateArray[1].toFixed(2) +" €"; break;
         case 'PL': convertValute = userValute / rateArray[2].toFixed(2) +" zł"; break;
         case 'RU': convertValute = userValute / rateArray[3].toFixed(2) +" ₽"; break;
+        case 'CN': convertValute = userValute / rateArray[4].toFixed(2) + " ¥"; break;
     }
     
     outValute.innerHTML = convertValute;
