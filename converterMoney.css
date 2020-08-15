@@ -34,13 +34,14 @@ https://www.flaticon.com/free-icon/exchange_570226
 
 /* MAIN BLK SELECT VALUTE */
 #blkSelectValute{
-    width: 27%;
-    height: 1%;
-    display: flex;
+    width: 16.5vw;
+    height: 15vh;
     border-radius: 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 5.5vw);
+    grid-template-rows: repeat(2, 6vh);
     align-items: center;
-    justify-content: center;
-    flex-direction: row;
+    justify-items: center;
     background-color: #101010;
 }
 
@@ -49,14 +50,8 @@ option{
 }
 
 /* SELECT LEFT */
-#blkWithValuteCountry{
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    padding: 5%;
-}
 #listWithCountry{
-    width: 60px;
+    width: 50px;
     height: 50px;
     border: none;
     border-radius: 15px 0 0 15px;
@@ -79,20 +74,12 @@ option{
 }
 
 #swapValute:active{
-    width: 60px;
-    height: 50px;
     transform: scaleX(-1)
 }
 
 /* SELECT RIGHT */
-#blkInValuteCountry{
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    padding: 5%;
-}
 #listInCountry{
-    width: 60px;
+    width: 50px;
     height: 50px;
     border: none;
     border-radius: 0 15px 15px 0;
@@ -157,16 +144,34 @@ footer div img {
 
 
 /* ADAPTING */
-
-@media screen and (max-width: 1080px){
-    #blkSelectValute, #inOutPut{
+@media screen and (max-width: 599px){
+    #blkSelectValute {
+        grid-template-columns: repeat(3, 20vw);
+        width: 60vw;
+    }
+    
+    #inOutPut{
         width: 100%;
     }
 
     #userValute{
         margin-top: 4%;
     }
+}
 
+@media screen and (min-width: 600px) and (max-width: 1100px){
+    #blkSelectValute {
+        grid-template-columns: repeat(3, 11vw);
+        width: 33vw;
+    }
+    
+    #inOutPut{
+        width: 100%;
+    }
+
+    #userValute{
+        margin-top: 4%;
+    }
 }
 
 /* HIDE ARROWS IN INPUT BUTTON */
