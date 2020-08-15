@@ -11,8 +11,9 @@
     <div id="mainConteiner">
         <div class="Logo"></div>
     <div id="blkSelectValute">
-        <div id="blkWithValuteCountry">
         <div class="justText">from</div>
+        <div></div>
+        <div class="justText">to</div>
         <select id="listWithCountry" onchange="converterVal_To_Ua()">
             <option>US</option>
             <option>EU</option>
@@ -21,21 +22,15 @@
             <option>CN</option>
             <option>UA</option>
         </select>    
-        </div>
-
         <button id="swapValute" value="val_to_ua"><div></div></button>
-
-        <div id="blkInValuteCountry">
-        <div class="justText">to</div>
-            <select id="listInCountry" onchange="converterVal_To_Ua()">
-                <option>UA</option>
-                <option>US</option>
-                <option>EU</option>
-                <option>PL</option>
-                <option>RU</option>
-                <option>CN</option>
-            </select>
-        </div>
+        <select id="listInCountry" onchange="converterVal_To_Ua()">
+            <option>UA</option>
+            <option>US</option>
+            <option>EU</option>
+            <option>PL</option>
+            <option>RU</option>
+            <option>CN</option>
+        </select>
     </div>
     <div id="inOutPut">
     <input type='number' id="userValute" placeholder="AMOUNT" value="AMOUNT" onfocus="this.value=''" oninput="converterVal_To_Ua()">
