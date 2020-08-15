@@ -9,12 +9,19 @@ https://www.flaticon.com/free-icon/exchange_570226
 }
 
 #mainConteiner{
-    padding: 20px;
-    margin: 10%;
+    margin: 5%;
     display: flex;
     justify-content: center;
     align-items: center; 
     flex-direction: column;
+}
+
+.Logo {
+    width: 20vh;
+    height: 20vh;
+    margin-bottom: 3vh;
+    background-image: url(./media/icon.svg);
+    background-size: cover;
 }
 
 /* ALL TEXT */
