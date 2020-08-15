@@ -1,4 +1,9 @@
-*{
+/*ICONS
+https://www.flaticon.com/free-icon/exchange_2751665
+https://www.flaticon.com/free-icon/exchange_570226
+*/
+
+* {
     margin: 0;
     outline: none;
 }
@@ -126,11 +131,12 @@ footer div {
     justify-content: center;
 }
 
-footer div a{
-    color: #fff
+footer div a {
+    color: #fff;
+    outline: none;
 }
 
-footer div img{
+footer div img {
     width: 3.2vh;
     height: 3.2vh;
 }
