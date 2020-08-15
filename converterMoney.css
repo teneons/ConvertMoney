@@ -64,6 +64,13 @@ option{
     border: none;
     background-color: #fff;
 }
+#swapValute div {
+    width: 7vh;
+    height: 7vh;
+    background-image: url(./media/change.svg);
+    background-size: cover;
+}
+
 #swapValute:active{
     width: 60px;
     height: 50px;
