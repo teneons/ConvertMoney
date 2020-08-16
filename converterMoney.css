@@ -37,6 +37,7 @@ https://www.flaticon.com/free-icon/exchange_570226
     width: 16.5vw;
     height: 15vh;
     border-radius: 20px;
+    position: relative;
     display: grid;
     grid-template-columns: repeat(3, 5.5vw);
     grid-template-rows: repeat(2, 6vh);
@@ -69,6 +70,7 @@ option{
 #swapValute div {
     width: 7vh;
     height: 7vh;
+    justify-content: center;
     background-image: url(./media/change.svg);
     background-size: cover;
 }
